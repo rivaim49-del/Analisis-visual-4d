@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prediksi Togel - ML Mb Index Ty M0 M9</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0d1117;
+    color:#fff;
+}
+
+.container{
+    width:95%;
+    max-width:1100px;
+    margin:20px auto;
+}
+
+.header{
+    background:linear-gradient(135deg,#172554,#1e40af);
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.header h1{
+    margin:0 0 8px;
+    font-size:28px;
+}
+
+.header p{
+    margin:0;
+    color:#dbeafe;
+}
+
+.card{
+    background:#161b22;
+    border:1px solid #30363d;
+    border-radius:14px;
+    padding:20px;
+    margin-top:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.card h2{
+    margin-top:0;
+    color:#60a5fa;
+}
+
+textarea{
+    width:100%;
+    min-height:180px;
+    background:#0d1117;
+    color:#fff;
+    border:1px solid #30363d;
+    border-radius:10px;
+    padding:15px;
+    font-size:16px;
+    resize:vertical;
+}
+
+button{
+    border:0;
+    border-radius:9px;
+    padding:12px 18px;
+    margin:8px 5px 0 0;
+    font-weight:bold;
+    cursor:pointer;
+    color:white;
+    background:#2563eb;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.btn-green{
+    background:#059669;
+}
+
+.btn-red{
+    background:#dc2626;
+}
+
+.btn-gray{
+    background:#4b5563;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:12px;
+}
+
+.stat{
+    background:#0d1117;
+    border:1px solid #30363d;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
+}
+
+.stat-title{
+    color:#9ca3af;
+    font-size:13px;
+}
+
+.stat-number{
+    color:#60a5fa;
+    font-size:25px;
+    font-weight:bold;
+    margin-top:5px;
+}
+
+.result-box{
+    background:#0d1117;
+    border:1px solid #30363d;
+    border-radius:12px;
+    padding:18px;
+    margin-top:15px;
+}
+
+.big-number{
+    font-size:34px;
+    font-weight:bold;
+    letter-spacing:6px;
+    color:#facc15;
+    text-align:center;
+    padding:10px;
+}
+
+.bbfs{
+    font-size:32px;
+    color:#34d399;
+    letter-spacing:8px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.category{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.category .box{
+    background:#111827;
+    border:1px solid #374151;
+    border-radius:12px;
+    padding:18px;
+}
+
+.category h3{
+    margin-top:0;
+    color:#93c5fd;
+}
+
+.number-list{
+    font-size:25px;
+    letter-spacing:5px;
+    font-weight:bold;
+    color:#fbbf24;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+th,td{
+    border:1px solid #30363d;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#1e3a8a;
+}
+
+tr:nth-child(even){
+    background:#111827;
+}
+
+.formula{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:10px;
+}
+
+.formula-box{
+    background:#111827;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #374151;
+}
+
+.formula-box strong{
+    color:#60a5fa;
+}
+
+.warning{
+    color:#fbbf24;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.footer{
+    text-align:center;
+    color:#6b7280;
+    margin:25px 0;
+    font-size:13px;
+}
+
+.hidden{
+    display:none;
+}
+
+@media(max-width:600px){
+    .header h1{
+        font-size:22px;
+    }
+
+    .big-number{
+        font-size:27px;
+    }
+
+    .bbfs{
+        font-size:27px;
+    }
+
+    table{
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+    <h1>🔢 PREDIKSI ANGKA</h1>
+    <p>ML • Mb • Index • Ty • M0 • M9</p>
+</div>
+
+
+<!-- INPUT DATA -->
+<div class="card">
+
+<h2>📥 Data Result Sebelumnya</h2>
+
+<p>
+Masukkan result 4 digit. Satu result per baris.
+Contoh:
+</p>
+
+<textarea id="results" placeholder="1234
+5678
+9012
+3456
+7890"></textarea>
+
+<br>
+
+<button onclick="loadExample()">Contoh Data</button>
+<button class="btn-green" onclick="calculate()">⚡ HITUNG PREDIKSI</button>
+<button class="btn-red" onclick="resetData()">Reset</button>
+
+<p class="warning">
+Gunakan minimal 5 result. Semakin banyak data historis yang dimasukkan,
+semakin banyak pola yang dapat dihitung oleh simulator.
+</p>
+
+</div>
+
+
+<!-- STATISTIK -->
+<div id="output" class="hidden">
+
+<div class="card">
+
+<h2>📊 Statistik Data</h2>
+
+<div class="grid">
+
+<div class="stat">
+<div class="stat-title">Jumlah Result</div>
+<div id="jumlahResult" class="stat-number">0</div>
+</div>
+
+<div class="stat">
+<div class="stat-title">Digit Terpanas</div>
+<div id="hotDigit" class="stat-number">-</div>
+</div>
+
+<div class="stat">
+<div class="stat-title">Digit Terendah</div>
+<div id="coldDigit" class="stat-number">-</div>
+</div>
+
+<div class="stat">
+<div class="stat-title">BBFS</div>
+<div id="bbfsMini" class="stat-number">-</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TOP 4D -->
+<div class="card">
+
+<h2>🏆 TOP 4D - 5 LINE</h2>
+
+<div id="top4d"></div>
+
+</div>
+
+
+<!-- BBFS -->
+<div class="card">
+
+<h2>🎯 BBFS 6 DIGIT</h2>
+
+<div id="bbfs" class="bbfs"></div>
+
+<p style="text-align:center;color:#9ca3af;">
+6 digit dengan skor kombinasi tertinggi dari seluruh rumus.
+</p>
+
+</div>
+
+
+<!-- TARUNG -->
+<div class="card">
+
+<h2>⚔️ ANGKA TARUNG</h2>
+
+<div class="category">
+
+<div class="box">
+<h3>AS</h3>
+<div id="tarungAs" class="number-list">-</div>
+</div>
+
+<div class="box">
+<h3>COP</h3>
+<div id="tarungCop" class="number-list">-</div>
+</div>
+
+<div class="box">
+<h3>KEPALA</h3>
+<div id="tarungKepala" class="number-list">-</div>
+</div>
+
+<div class="box">
+<h3>EKOR</h3>
+<div id="tarungEkor" class="number-list">-</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SKOR RUMUS -->
+<div class="card">
+
+<h2>🧮 HASIL 6 RUMUS</h2>
+
+<div class="formula">
+
+<div class="formula-box">
+<strong>ML / Mistik Lama</strong>
+<div id="mlResult">-</div>
+</div>
+
+<div class="formula-box">
+<strong>Mb / Mistik Baru</strong>
+<div id="mbResult">-</div>
+</div>
+
+<div class="formula-box">
+<strong>Index</strong>
+<div id="indexResult">-</div>
+</div>
+
+<div class="formula-box">
+<strong>Ty / Tysen</strong>
+<div id="tyResult">-</div>
+</div>
+
+<div class="formula-box">
+<strong>M0 / Mistik 0</strong>
+<div id="m0Result">-</div>
+</div>
+
+<div class="formula-box">
+<strong>M9 / Mistik 9</strong>
+<div id="m9Result">-</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TABEL SKOR -->
+<div class="card">
+
+<h2>📈 SKOR DIGIT</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Digit</th>
+<th>Frekuensi</th>
+<th>ML</th>
+<th>Mb</th>
+<th>Index</th>
+<th>Ty</th>
+<th>M0</th>
+<th>M9</th>
+<th>Total</th>
+</tr>
+</thead>
+
+<tbody id="scoreTable"></tbody>
+
+</table>
+
+</div>
+
+
+<!-- RUMUS -->
+<div class="card">
+
+<h2>📚 Rumus Yang Digunakan</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Rumus</th>
+<th>Pasangan</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>ML / Mistik Lama</td>
+<td>0-1, 2-5, 3-8, 4-7, 6-9</td>
+</tr>
+
+<tr>
+<td>Mb / Mistik Baru</td>
+<td>0-8, 2-6, 3-9, 4-5, 7-1</td>
+</tr>
+
+<tr>
+<td>Index</td>
+<td>0-5, 2-7, 3-8, 4-9, 1-6</td>
+</tr>
+
+<tr>
+<td>Ty / Tysen</td>
+<td>0-7, 2-9, 3-6, 4-1, 5-8</td>
+</tr>
+
+<tr>
+<td>M0 / Mistik 0</td>
+<td>0-6, 1-5, 2-8, 3-7, 4-9</td>
+</tr>
+
+<tr>
+<td>M9 / Mistik 9</td>
+<td>0-9, 1-8, 2-7, 3-6, 4-5</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<button class="btn-green" onclick="copyAll()">📋 Copy Semua Hasil</button>
+
+</div>
+
+
+<div class="footer">
+Simulator prediksi berbasis pola data historis • Hasil bersifat estimasi
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   DATABASE RUMUS DARI GAMBAR
+========================================================= */
+
+const FORMULAS = {
+
+    ML: {
+        0:1,
+        1:0,
+        2:5,
+        5:2,
+        3:8,
+        8:3,
+        4:7,
+        7:4,
+        6:9,
+        9:6
+    },
+
+    MB: {
+        0:8,
+        8:0,
+        2:6,
+        6:2,
+        3:9,
+        9:3,
+        4:5,
+        5:4,
+        7:1,
+        1:7
+    },
+
+    INDEX: {
+        0:5,
+        5:0,
+        2:7,
+        7:2,
+        3:8,
+        8:3,
+        4:9,
+        9:4,
+        1:6,
+        6:1
+    },
+
+    TY: {
+        0:7,
+        7:0,
+        2:9,
+        9:2,
+        3:6,
+        6:3,
+        4:1,
+        1:4,
+        5:8,
+        8:5
+    },
+
+    M0: {
+        0:6,
+        6:0,
+        1:5,
+        5:1,
+        2:8,
+        8:2,
+        3:7,
+        7:3,
+        4:9,
+        9:4
+    },
+
+    M9: {
+        0:9,
+        9:0,
+        1:8,
+        8:1,
+        2:7,
+        7:2,
+        3:6,
+        6:3,
+        4:5,
+        5:4
+    }
+
+};
+
+
+/* =========================================================
+   DATA CONTOH
+========================================================= */
+
+function loadExample(){
+
+    document.getElementById("results").value =
+`1234
+5678
+9012
+3456
+7890
+2145
+6389
+4702
+8521
+3967
+1048
+7253
+6810
+4392
+9574
+2168
+5307
+8941
+3726
+6059`;
+
+}
+
+
+/* =========================================================
+   PARSE RESULT
+========================================================= */
+
+function getResults(){
+
+    const text =
+        document.getElementById("results").value;
+
+    return text
+        .split(/\s+/)
+        .map(x => x.trim())
+        .filter(x => /^\d{4}$/.test(x));
+
+}
+
+
+/* =========================================================
+   FREKUENSI DIGIT
+========================================================= */
+
+function getFrequency(results){
+
+    let freq = Array(10).fill(0);
+
+    results.forEach(result => {
+
+        [...result].forEach(digit => {
+
+            freq[Number(digit)]++;
+
+        });
+
+    });
+
+    return freq;
+
+}
+
+
+/* =========================================================
+   HITUNG SKOR MASING-MASING RUMUS
+========================================================= */
+
+function calculateFormulaScore(freq, formula){
+
+    let score = Array(10).fill(0);
+
+    for(let d=0; d<=9; d++){
+
+        const target = formula[d];
+
+        /*
+        Digit sumber yang sering muncul
+        memberikan nilai kepada pasangan
+        hasil rumusnya.
+        */
+
+        score[target] += freq[d];
+
+    }
+
+    return score;
+
+}
+
+
+/* =========================================================
+   NORMALISASI SCORE
+========================================================= */
+
+function normalize(arr){
+
+    const max = Math.max(...arr);
+
+    if(max === 0) return arr.map(() => 0);
+
+    return arr.map(x => x / max);
+
+}
+
+
+/* =========================================================
+   MAIN CALCULATION
+========================================================= */
+
+function calculate(){
+
+    const results = getResults();
+
+    if(results.length < 5){
+
+        alert(
+            "Masukkan minimal 5 result 4D terlebih dahulu."
+        );
+
+        return;
+
+    }
+
+
+    const freq = getFrequency(results);
+
+
+    /* Skor masing-masing rumus */
+
+    const ml =
+        calculateFormulaScore(freq, FORMULAS.ML);
+
+    const mb =
+        calculateFormulaScore(freq, FORMULAS.MB);
+
+    const index =
+        calculateFormulaScore(freq, FORMULAS.INDEX);
+
+    const ty =
+        calculateFormulaScore(freq, FORMULAS.TY);
+
+    const m0 =
+        calculateFormulaScore(freq, FORMULAS.M0);
+
+    const m9 =
+        calculateFormulaScore(freq, FORMULAS.M9);
+
+
+    /*
+       Normalisasi agar setiap rumus
+       mempunyai bobot yang seimbang.
+    */
+
+    const nML = normalize(ml);
+    const nMB = normalize(mb);
+    const nIndex = normalize(index);
+    const nTy = normalize(ty);
+    const nM0 = normalize(m0);
+    const nM9 = normalize(m9);
+
+
+    /*
+       Total skor:
+
+       Frekuensi historis +
+       enam rumus mistik.
+    */
+
+    let total = Array(10).fill(0);
+
+    for(let d=0; d<=9; d++){
+
+        const historical =
+            freq[d] / Math.max(...freq);
+
+        total[d] =
+            historical * 1.0 +
+            nML[d] * 1.0 +
+            nMB[d] * 1.0 +
+            nIndex[d] * 1.0 +
+            nTy[d] * 1.0 +
+            nM0[d] * 1.0 +
+            nM9[d] * 1.0;
+
+    }
+
+
+    /*
+       Urutkan digit berdasarkan skor
+    */
+
+    const ranking =
+        [...Array(10).keys()]
+        .sort((a,b) => total[b] - total[a]);
+
+
+    /* Tampilkan statistik */
+
+    document.getElementById("output")
+        .classList.remove("hidden");
+
+    document.getElementById("jumlahResult")
+        .textContent = results.length;
+
+    document.getElementById("hotDigit")
+        .textContent = ranking[0];
+
+    document.getElementById("coldDigit")
+        .textContent = ranking[9];
+
+
+    /* =====================================================
+       BBFS 6 DIGIT
+    ===================================================== */
+
+    const bbfsDigits =
+        ranking.slice(0,6);
+
+    const bbfs =
+        bbfsDigits.join("");
+
+    document.getElementById("bbfs")
+        .textContent = bbfs;
+
+    document.getElementById("bbfsMini")
+        .textContent = bbfs;
+
+
+    /* =====================================================
+       HASIL PER RUMUS
+    ===================================================== */
+
+    document.getElementById("mlResult")
+        .textContent = getTopDigits(ml,5);
+
+    document.getElementById("mbResult")
+        .textContent = getTopDigits(mb,5);
+
+    document.getElementById("indexResult")
+        .textContent = getTopDigits(index,5);
+
+    document.getElementById("tyResult")
+        .textContent = getTopDigits(ty,5);
+
+    document.getElementById("m0Result")
+        .textContent = getTopDigits(m0,5);
+
+    document.getElementById("m9Result")
+        .textContent = getTopDigits(m9,5);
+
+
+    /* =====================================================
+       ANGKA TARUNG
+    ===================================================== */
+
+    /*
+       AS:
+       mengambil digit dengan skor tertinggi
+    */
+
+    const as =
+        ranking.slice(0,6);
+
+    /*
+       COP:
+       menggunakan kombinasi ranking
+       dari skor formula yang berbeda
+    */
+
+    const cop =
+        makeCategory(total, ml, mb, 6);
+
+    /*
+       KEPALA:
+       dihitung berdasarkan posisi pertama
+       dari result historis
+    */
+
+    const kepalaFreq =
+        getPositionFrequency(results,0);
+
+    const kepalaScore =
+        combinePositionScore(
+            kepalaFreq,
+            total
+        );
+
+    const kepala =
+        sortDigits(kepalaScore).slice(0,6);
+
+
+    /*
+       EKOR:
+       dihitung berdasarkan posisi terakhir
+    */
+
+    const ekorFreq =
+        getPositionFrequency(results,3);
+
+    const ekorScore =
+        combinePositionScore(
+            ekorFreq,
+            total
+        );
+
+    const ekor =
+        sortDigits(ekorScore).slice(0,6);
+
+
+    document.getElementById("tarungAs")
+        .textContent = as.join("");
+
+    document.getElementById("tarungCop")
+        .textContent = cop.join("");
+
+    document.getElementById("tarungKepala")
+        .textContent = kepala.join("");
+
+    document.getElementById("tarungEkor")
+        .textContent = ekor.join("");
+
+
+    /* =====================================================
+       TOP 4D
+    ===================================================== */
+
+    const top4d =
+        generateTop4D(
+            ranking,
+            total,
+            results
+        );
+
+    showTop4D(top4d);
+
+
+    /* =====================================================
+       TABEL SKOR
+    ===================================================== */
+
+    showScoreTable(
+        freq,
+        ml,
+        mb,
+        index,
+        ty,
+        m0,
+        m9,
+        total,
+        ranking
+    );
+
+}
+
+
+/* =========================================================
+   TOP DIGITS
+========================================================= */
+
+function getTopDigits(score,count){
+
+    return [...Array(10).keys()]
+        .sort((a,b) => score[b] - score[a])
+        .slice(0,count)
+        .join("");
+
+}
+
+
+/* =========================================================
+   POSITION FREQUENCY
+========================================================= */
+
+function getPositionFrequency(results,pos){
+
+    let freq = Array(10).fill(0);
+
+    results.forEach(result => {
+
+        const d =
+            Number(result[pos]);
+
+        freq[d]++;
+
+    });
+
+    return freq;
+
+}
+
+
+/* =========================================================
+   POSITION + TOTAL SCORE
+========================================================= */
+
+function combinePositionScore(freq,total){
+
+    const maxFreq =
+        Math.max(...freq) || 1;
+
+    return freq.map(
+        (f,i) =>
+            (f/maxFreq) + total[i]
+    );
+
+}
+
+
+/* =========================================================
+   SORT DIGITS
+========================================================= */
+
+function sortDigits(score){
+
+    return [...Array(10).keys()]
+        .sort(
+            (a,b) =>
+            score[b] - score[a]
+        );
+
+}
+
+
+/* =========================================================
+   CATEGORY TARUNG
+========================================================= */
+
+function makeCategory(
+    total,
+    formula1,
+    formula2,
+    count
+){
+
+    let score = Array(10).fill(0);
+
+    for(let i=0;i<10;i++){
+
+        score[i] =
+            total[i] +
+            formula1[i] +
+            formula2[i];
+
+    }
+
+    return sortDigits(score)
+        .slice(0,count);
+
+}
+
+
+/* =========================================================
+   GENERATOR TOP 4D
+========================================================= */
+
+function generateTop4D(
+    ranking,
+    total,
+    results
+){
+
+    let candidates = [];
+
+    /*
+       Membuat kandidat berdasarkan
+       digit ranking tertinggi.
+    */
+
+    for(let a=0;a<10;a++){
+
+        for(let b=0;b<10;b++){
+
+            for(let c=0;c<10;c++){
+
+                for(let d=0;d<10;d++){
+
+                    const digits =
+                        [ranking[a],ranking[b],
+                         ranking[c],ranking[d]];
+
+                    /*
+                       Skor kombinasi.
+                    */
+
+                    let score =
+                        total[digits[0]] +
+                        total[digits[1]] +
+                        total[digits[2]] +
+                        total[digits[3]];
+
+                    /*
+                       Bonus variasi digit.
+                    */
+
+                    const unique =
+                        new Set(digits).size;
+
+                    score += unique * 0.15;
+
+                    /*
+                       Bonus pola berdasarkan
+                       digit result terakhir.
+                    */
+
+                    const last =
+                        results[0];
+
+                    if(last){
+
+                        if(digits[0] ==
+                           Number(last[0]))
+                            score += 0.10;
+
+                        if(digits[3] ==
+                           Number(last[3]))
+                            score += 0.10;
+
+                    }
+
+                    candidates.push({
+
+                        number:
+                            digits.join(""),
+
+                        score:score
+
+                    });
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+    /*
+       Urutkan.
+    */
+
+    candidates.sort(
+        (a,b) =>
+        b.score - a.score
+    );
+
+
+    /*
+       Ambil 5 line unik.
+    */
+
+    const selected = [];
+
+    const used =
+        new Set();
+
+    for(const item of candidates){
+
+        if(!used.has(item.number)){
+
+            selected.push(item);
+
+            used.add(item.number);
+
+        }
+
+        if(selected.length >= 5)
+            break;
+
+    }
+
+    return selected;
+
+}
+
+
+/* =========================================================
+   SHOW TOP 4D
+========================================================= */
+
+function showTop4D(data){
+
+    const el =
+        document.getElementById("top4d");
+
+    el.innerHTML = "";
+
+    data.forEach((item,index) => {
+
+        const div =
+            document.createElement("div");
+
+        div.className =
+            "result-box";
+
+        div.innerHTML = `
+            <div style="
+                color:#9ca3af;
+                text-align:center;
+                ">
+                LINE ${index+1}
+            </div>
+
+            <div class="big-number">
+                ${item.number}
+            </div>
+
+            <div style="
+                text-align:center;
+                color:#6b7280;
+                ">
+                Skor: ${item.score.toFixed(3)}
+            </div>
+        `;
+
+        el.appendChild(div);
+
+    });
+
+}
+
+
+/* =========================================================
+   SCORE TABLE
+========================================================= */
+
+function showScoreTable(
+    freq,
+    ml,
+    mb,
+    index,
+    ty,
+    m0,
+    m9,
+    total,
+    ranking
+){
+
+    const tbody =
+        document.getElementById("scoreTable");
+
+    tbody.innerHTML = "";
+
+    ranking.forEach(d => {
+
+        const tr =
+            document.createElement("tr");
+
+        tr.innerHTML = `
+
+            <td>
+                <strong>${d}</strong>
+            </td>
+
+            <td>
+                ${freq[d]}
+            </td>
+
+            <td>
+                ${ml[d].toFixed(1)}
+            </td>
+
+            <td>
+                ${mb[d].toFixed(1)}
+            </td>
+
+            <td>
+                ${index[d].toFixed(1)}
+            </td>
+
+            <td>
+                ${ty[d].toFixed(1)}
+            </td>
+
+            <td>
+                ${m0[d].toFixed(1)}
+            </td>
+
+            <td>
+                ${m9[d].toFixed(1)}
+            </td>
+
+            <td>
+                <strong>
+                    ${total[d].toFixed(3)}
+                </strong>
+            </td>
+
+        `;
+
+        tbody.appendChild(tr);
+
+    });
+
+}
+
+
+/* =========================================================
+   COPY HASIL
+========================================================= */
+
+function copyAll(){
+
+    const bbfs =
+        document.getElementById("bbfs")
+        .textContent;
+
+    const as =
+        document.getElementById("tarungAs")
+        .textContent;
+
+    const cop =
+        document.getElementById("tarungCop")
+        .textContent;
+
+    const kepala =
+        document.getElementById("tarungKepala")
+        .textContent;
+
+    const ekor =
+        document.getElementById("tarungEkor")
+        .textContent;
+
+    const top4d =
+        [...document.querySelectorAll(
+            "#top4d .big-number"
+        )]
+        .map(x => x.textContent.trim())
+        .join("\n");
+
+    const text =
+`
+HASIL PREDIKSI
+====================
+
+TOP 4D - 5 LINE
+${top4d}
+
+BBFS 6D
+${bbfs}
+
+ANGKA TARUNG
+
+AS       : ${as}
+COP      : ${cop}
+KEPALA   : ${kepala}
+EKOR     : ${ekor}
+
+Rumus:
+ML - Mb - Index - Ty - M0 - M9
+`;
+
+    navigator.clipboard.writeText(text)
+        .then(() => {
+
+            alert(
+                "Hasil berhasil dicopy."
+            );
+
+        })
+        .catch(() => {
+
+            alert(
+                "Copy otomatis tidak tersedia di browser ini."
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+function resetData(){
+
+    document.getElementById("results")
+        .value = "";
+
+    document.getElementById("output")
+        .classList.add("hidden");
+
+}
+
+
+/* =========================================================
+   AUTO CONTOH SAAT PERTAMA DIBUKA
+========================================================= */
+
+loadExample();
+
+</script>
+
+</body>
+</html>
